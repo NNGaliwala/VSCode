@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosherwan Nawaz - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        nav h1 {
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 1rem;
+        }
+        
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .skill-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-card ul {
+            list-style-position: inside;
+            color: #555;
+        }
+        
+        .skill-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        #resume {
+            background: white;
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .resume-header h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-header p {
+            color: #555;
+            margin: 0.25rem 0;
+        }
+        
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+        
+        .resume-section h3 {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3498db;
+            padding-left: 0.75rem;
+        }
+        
+        .job-entry {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.05rem;
+        }
+        
+        .job-date {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+        
+        .job-location {
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        .job-description ul {
+            margin-top: 0.75rem;
+            margin-left: 1.5rem;
+            color: #555;
+        }
+        
+        .job-description li {
+            margin-bottom: 0.4rem;
+            line-height: 1.5;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-badge {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .edu-entry {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .edu-school {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .edu-degree {
+            color: #555;
+            margin-top: 0.3rem;
+        }
+        
+        .edu-details {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <h1>Nosherwan Nawaz</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Passionate Data Science Professional | Data Analysis | Machine Learning | Python</p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>Welcome! I'm Nosherwan Nawaz, a data science enthusiast with a strong background in data analysis and machine learning. I'm passionate about turning raw data into meaningful insights and building predictive models that drive business decisions. With expertise in Python, SQL, and various data science tools, I'm committed to solving complex problems through data-driven approaches.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>R</li>
+                    <li>Java</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data Science & Analysis</h3>
+                <ul>
+                    <li>Machine Learning</li>
+                    <li>Statistical Analysis</li>
+                    <li>Data Visualization</li>
+                    <li>Predictive Modeling</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Tools & Libraries</h3>
+                <ul>
+                    <li>Pandas</li>
+                    <li>NumPy</li>
+                    <li>Scikit-learn</li>
+                    <li>Matplotlib / Seaborn</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Other Skills</h3>
+                <ul>
+                    <li>Data Preprocessing</li>
+                    <li>Feature Engineering</li>
+                    <li>Database Management</li>
+                    <li>Web Development Basics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <h2>Resume</h2>
+        
+        <div class="resume-header">
+            <h1>Nosherwan Nawaz</h1>
+            <p><strong>Sales Expert and Team Leader</strong></p>
+            <p>254 Stoddards Wharf Road, Gales Ferry, United States, 06335</p>
+            <p>📞 959.221.0037 | 📧 nanawazg@gmail.com</p>
+        </div>
+
+        <div class="resume-section">
+            <h3>Professional Summary</h3>
+            <p>Sales Expert and Team Leader with over a decade of experience driving exceptional sales performance through strategic upselling and targeted promotions. Demonstrates a strong aptitude for team building and training development, consistently fostering a collaborative environment that enhances employee morale and customer satisfaction. Proficient in sales forecasting and performance metrics, leveraging technical literacy and performance metric systems knowledge to streamline operations and achieve substantial revenue growth.</p>
+        </div>
+
+        <div class="resume-section">
+            <h3>Employment History</h3>
+            
+            <div class="job-entry">
+                <div class="job-title">Retail Store Manager</div>
+                <div class="job-date">Mar 2024 - Oct 2025</div>
+                <div class="job-location">T-Mobile | Gloucester MA / Portsmouth NH</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Promoted to Retail Store Manager after running store alone as Assistant Manager for eight months</li>
+                        <li>Averaged top twentieth percentile both 2024 and 2025, in two different locations</li>
+                        <li>Led a team to exceed sales targets, achieving substantial improvements in store revenue through strategic upselling initiatives</li>
+                        <li>Fostered a positive team environment, enhancing employee morale and ensuring high customer service standards</li>
+                        <li>Analyzed sales data to identify trends, enabling targeted promotions that boosted overall sales performance</li>
+                        <li>Coordinated training sessions for staff, enhancing product knowledge and driving customer engagement during peak hours</li>
+                        <li>Implemented inventory management strategies, leading to improved stock accuracy and reduced excess inventory</li>
+                        <li>Developed training materials for new hires, increasing team efficiency and improving overall service delivery</li>
+                        <li>Implemented effective merchandising strategies, driving increased sales and encouraging customer engagement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-title">Retail Assistant Manager</div>
+                <div class="job-date">Sep 2023 - Mar 2024</div>
+                <div class="job-location">T-Mobile | Gloucester MA</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Assisted customers with product inquiries, fostering a positive shopping experience and enhancing customer satisfaction</li>
+                        <li>Trained and mentored team members, promoting a culture of teamwork and achieving consistent sales targets</li>
+                        <li>Streamlined inventory management processes, resulting in reduced stock discrepancies and improved product availability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-title">Mobile Expert</div>
+                <div class="job-date">Aug 2022 - Sep 2023</div>
+                <div class="job-location">T-Mobile</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Guided customers through product selection, leading to noticeable increases in sales and enhancing customer satisfaction</li>
+                        <li>Achieved top twentieth percentile first quarter of employment, with a trend of top forty percentile months after</li>
+                        <li>Enhanced customer engagement by implementing tailored product demonstrations, resulting in substantial improvements in conversion rates</li>
+                        <li>Worked closely with team members to enhance service delivery, resulting in a cohesive approach that elevated overall sales performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-title">Supervisor</div>
+                <div class="job-date">Feb 2020 - Aug 2022</div>
+                <div class="job-location">Ben and Jerry's</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Provided exceptional service, fostering a positive shopping environment and building lasting customer relationships</li>
+                        <li>Fostered a welcoming atmosphere, encouraging customer loyalty and repeat business through personalized service</li>
+                        <li>Fostered a positive team environment, enhancing employee morale and collaboration among staff members</li>
+                        <li>Trained and coached new employees to help them understand processes and best practices</li>
+                        <li>Worked with management to understand pitfalls and shortcomings to better strategize and create a better working environment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-title">Trainer</div>
+                <div class="job-date">Jul 2015 - Jan 2020</div>
+                <div class="job-location">Panera Bread</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Promoted to trainer within a few months, guiding new employees through processes and procedures</li>
+                        <li>Awarded employee of the year after working six months at first job, and recognized by CEO of company for hard work and effort</li>
+                        <li>Proficient at all stations and tasks throughout the establishment, being able to do anything that was needed by management</li>
+                        <li>Analyzed customer feedback to refine service strategies, achieving notable gains in satisfaction scores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h3>Skills</h3>
+            <div class="skills-list">
+                <span class="skill-badge">Team Building</span>
+                <span class="skill-badge">Sales Forecasting</span>
+                <span class="skill-badge">Training Development</span>
+                <span class="skill-badge">Sales Strategy</span>
+                <span class="skill-badge">Performance Metrics</span>
+                <span class="skill-badge">Upselling Techniques</span>
+                <span class="skill-badge">Microsoft Suite</span>
+                <span class="skill-badge">HR and Payroll Systems</span>
+                <span class="skill-badge">Technical Literacy</span>
+                <span class="skill-badge">Technical Knowledge</span>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h3>Education</h3>
+            
+            <div class="edu-entry">
+                <div class="edu-school">Strayer University</div>
+                <div class="edu-degree">Bachelor's Degree in Business Administration</div>
+                <div class="edu-details">Remote | Feb 2025 - Present | GPA: 4.0</div>
+                <p style="margin-top: 0.5rem; color: #555; font-size: 0.95rem;">Currently pursuing BA in Business Administration with Management or HR focus through a program provided by T-Mobile.</p>
+            </div>
+
+            <div class="edu-entry">
+                <div class="edu-school">Three Rivers Community College</div>
+                <div class="edu-degree">Associate's Degree in Mathematics</div>
+                <div class="edu-details">Norwich, Connecticut | Jan 2015 - Sep 2018 | GPA: 3.9+</div>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h3>Languages</h3>
+            <div class="skills-list">
+                <span class="skill-badge">English</span>
+                <span class="skill-badge">Urdu</span>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h3>Hobbies & Interests</h3>
+            <p>I love music and have always wanted to play the electric bass. I am an avid fan of fantasy stories and video games alike, playing things from Magic the Gathering to Minecraft. I am also a huge fan of space and philosophy, often asking and learning about existential questions in hopes of self-betterment.</p>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="resume.pdf" download="Nosherwan_Nawaz_Resume.pdf" class="download-btn">
+                📥 Download Resume (PDF)
+            </a>
+        </div>
+    </section>
+</body>
+</html>
